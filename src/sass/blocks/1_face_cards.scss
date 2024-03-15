@@ -1,0 +1,74 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@100..900&display=swap");
+
+.face_cards {
+  min-height: 100vh;
+  display: flex;
+  gap: 3vw;
+  justify-content: center;
+  align-items: center;
+  font-family: "Roboto Condensed", sans-serif;
+}
+.card1 {
+  background: url(https://javasea.ru/uploads/posts/2020-02/1582620674_bryus-uillis.jpg)
+    center no-repeat;
+  background-size: 308px;
+  background-position: 40% 49%;
+  filter: contrast(115%) brightness(82%);
+  &:hover {
+    background-size: 588px;
+    background-position: 0% 61%;
+  }
+}
+
+.card2 {
+  background: url(https://i.pinimg.com/originals/8e/56/aa/8e56aadecc88011040c66b463cdea98a.jpg)
+    center no-repeat;
+  background-size: 350px;
+  background-position: 50% 60%;
+  filter: contrast(110%) brightness(83%);
+  &:hover {
+    background-size: 627px;
+    background-position: 7% 65%;
+  }
+}
+
+.card3 {
+  background: url(https://i.pinimg.com/originals/12/d2/1b/12d21b0b046b0b096a491aa36751c441.jpg)
+    center no-repeat;
+  background-size: 312px;
+  background-position: 50% 90%;
+  filter: contrast(120%) brightness(90%);
+  &:hover {
+    background-size: 592px;
+    background-position: 0% 64%;
+  }
+}
+.card {
+  display: grid;
+  padding: 16px;
+  color: transparent;
+  align-content: space-between;
+  outline-offset: -8px;
+  cursor: pointer;
+  width: 300px;
+  height: 380px;
+  box-shadow: 0 60px 60px -50px black;
+  border-radius: 10px;
+  transition: all 1s 0.2s, background 0.7s;
+
+  &:hover {
+    color: white;
+    outline: 1px solid white;
+    text-shadow: 0 2px 4px #000;
+  }
+  &_title {
+    font-size: 24px;
+    font-weight: 700;
+    transition: text-shadow 0.1s;
+  }
+  &_social {
+    font-size: 18px;
+    display: grid;
+    grid-gap: 8px;
+  }
+}
