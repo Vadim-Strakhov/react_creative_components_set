@@ -1,0 +1,110 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
+
+.wrapper {
+  min-height: 100vh;
+  font-family: "Raleway", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  display: grid;
+  align-content: center;
+  background: linear-gradient(to top, #0052d4, #65c7f7, #9cecfb);
+  position: relative;
+  overflow: hidden;
+}
+
+.title,
+.subtitle {
+  text-align: center;
+  font-size: 5vw;
+  color: white;
+}
+
+.subtitle {
+  font-size: 4vw;
+  color: black;
+}
+
+.animate {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  .cube {
+    --size: 30px;
+    position: absolute;
+    bottom: -150px;
+    left: 8%;
+    width: var(--size);
+    height: var(--size);
+    background-color: rgba(255, 255, 255, 0.205);
+    animation: animate 25s linear infinite;
+    &:nth-child(2) {
+      --size: 150px;
+      left: 20%;
+      animation-duration: 18s;
+    }
+    &:nth-child(3) {
+      --size: 50px;
+      left: 19%;
+      animation-duration: 24s;
+      animation-delay: 2s;
+    }
+    &:nth-child(4) {
+      --size: 100px;
+      left: 35%;
+      animation-duration: 19s;
+      animation-delay: 4s;
+    }
+    &:nth-child(5) {
+      --size: 30px;
+      left: 40%;
+      animation-duration: 17s;
+      animation-delay: 0s;
+    }
+    &:nth-child(6) {
+      --size: 70px;
+      left: 50%;
+      animation-duration: 16s;
+      animation-delay: 3s;
+    }
+    &:nth-child(7) {
+      --size: 150px;
+      left: 50%;
+      animation-duration: 25s;
+      animation-delay: 1s;
+    }
+    &:nth-child(8) {
+      --size: 30px;
+      left: 57%;
+      animation-duration: 18s;
+      animation-delay: 5s;
+    }
+    &:nth-child(9) {
+      --size: 60px;
+      left: 70%;
+      animation-duration: 14s;
+      animation-delay: 0s;
+    }
+    &:nth-child(10) {
+      --size: 150px;
+      left: 80%;
+      animation-duration: 23s;
+      animation-delay: 2s;
+    }
+  }
+}
+
+@keyframes animate {
+  from {
+    transform: translateY(0) rotate(0deg);
+    border-radius: 0;
+    opacity: 1;
+  }
+  to {
+    transform: translateY(-130vh) rotate(720deg);
+    border-radius: 50%;
+    opacity: 0;
+  }
+}

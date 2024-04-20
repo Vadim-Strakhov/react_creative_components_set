@@ -1,0 +1,145 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
+
+.cards__wrapper {
+  font-family: "Nunito", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  transform-style: preserve-3d;
+
+  .block {
+    min-height: 100vh;
+    background: #475e9c;
+    position: relative;
+    padding: 10vw;
+    display: grid;
+    align-items: center;
+    transform-style: preserve-3d;
+
+    & > * {
+      position: relative;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background-size: cover;
+      box-shadow: 0 2px 8px #000;
+    }
+
+    &.block1 {
+      justify-items: center;
+      color: white;
+      text-shadow: 1px 2px 4px black;
+    }
+
+    &.block1,
+    &.block3 {
+      z-index: 1;
+    }
+
+    &.block3,
+    &.block5 {
+      justify-items: end;
+    }
+
+    &.block1 {
+      &::before {
+        background-image: url(https://sportishka.com/uploads/posts/2022-09/1662113882_3-sportishka-com-p-krasivaya-priroda-gori-krasivo-3.jpg);
+      }
+    }
+
+    &.block2 {
+      &::before {
+        background-image: url(https://funik.ru/wp-content/uploads/2018/10/83d8a824da15c33acedf.jpg);
+      }
+    }
+
+    &.block3 {
+      &::before {
+        background-image: url(https://paradisevillaskas.com/wp-content/uploads/2017/07/post-6.jpg);
+      }
+    }
+
+    &.block4 {
+      &::before {
+        background-image: url(https://sopranoclub.ru/images/115-raznyh-krasivyh-kartinok/file58029.jpeg);
+      }
+    }
+
+    &.block5 {
+      &::before {
+        background-image: url(https://sportishka.com/uploads/posts/2023-12/1702131150_sportishka-com-p-krasivie-mesta-v-prirode-oboi-7.jpg);
+      }
+    }
+
+    .title {
+      font-size: 100px;
+    }
+  }
+
+  .page {
+    width: 700px;
+    padding: 64px 72px;
+    border-radius: 16px;
+    background-color: rgba(255, 255, 255, 0.7);
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 2px 3px 16px rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(2px);
+
+    &__title {
+      font-weight: bold;
+      font-size: 42px;
+      margin-bottom: 16px;
+    }
+
+    &__desc {
+      font-size: 24px;
+      line-height: 1.3em;
+    }
+  }
+
+  .img {
+    position: absolute !important;
+    top: 40%;
+    left: 20%;
+    width: 400px;
+    box-shadow: 2px 3px 8px rgba(0, 0, 0, 0.8);
+    border-radius: 8px;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.7);
+
+    &:nth-child(2) {
+      position: absolute !important;
+      top: 56%;
+      width: 400px;
+    }
+  }
+
+  //_ Parallax
+
+  .title {
+    transform: translateZ(0.3px) scale(0.8);
+  }
+
+  .block2,
+  .block4 {
+    background-color: transparent;
+
+    &::before {
+      transform: translateZ(-1px) scale(2);
+      left: -6px;
+    }
+  }
+
+  .img {
+    transform: rotate(4deg) translateZ(0.25px) scale(0.75);
+
+    &:nth-child(2) {
+      transform: rotate(-8deg) translateZ(0.4px) scale(0.6);
+    }
+  }
+}
