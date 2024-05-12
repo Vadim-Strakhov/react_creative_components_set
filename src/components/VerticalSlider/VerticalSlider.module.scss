@@ -1,0 +1,131 @@
+@import url("https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,900;1,100;1,200;1,300;1,400;1,500;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
+
+.wrapper {
+  position: relative;
+  min-height: 100vh;
+  background-color: rgb(77, 68, 68);
+  display: grid;
+  align-content: center;
+  justify-items: start;
+  height: 100vh;
+  gap: 30px;
+
+  font-family: "Ubuntu", sans-serif;
+  font-style: normal;
+
+  padding: 30px;
+  overflow: hidden;
+}
+
+//_ Radio Buttons
+
+.input {
+  cursor: pointer;
+  height: 0;
+  display: flex;
+  gap: 10px;
+  position: relative;
+  z-index: 1;
+  outline: none;
+  &::after,
+  &::before {
+    content: "";
+    color: white;
+  }
+  &::before {
+    display: block;
+    min-width: 10px;
+    height: 10px;
+    border: 1px solid white;
+    border-radius: 10px;
+    background-color: transparent;
+    box-shadow: 0px 1px 2px black;
+  }
+  &::after {
+    content: attr(title);
+    min-width: max-content;
+    opacity: 0;
+    line-height: 0.8em;
+    font-size: 16px;
+    font-weight: 800;
+    text-shadow: 0px 1px 2px black;
+  }
+  &:checked::before {
+    background-color: white;
+    transition: all 0.3s;
+  }
+  &:checked::after {
+    opacity: 1;
+    transition: all 0.3s;
+  }
+}
+
+//_ Blocks
+
+.blocks {
+  position: absolute;
+  width: 100vw;
+  height: 100vw;
+  background-color: #fff;
+  top: 0;
+  left: 0;
+  &__content {
+    position: absolute;
+    left: 0;
+    transition: all 0.5s ease-in;
+  }
+}
+
+.block {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  border: 1px solid black;
+  color: white;
+  font-size: 5vw;
+  font-weight: 900;
+  text-shadow: 1px 2px 3px black;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  z-index: 0;
+  &::before,
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+  }
+  &::before {
+    filter: saturate(170%);
+    background: var(--img) center / cover;
+  }
+  &::after {
+    background-color: black;
+    opacity: 0.4;
+  }
+}
+
+//_ Change Block
+
+.input {
+  &:nth-child(1):checked ~ .blocks .blocks__content {
+    top: 0;
+  }
+  &:nth-child(2):checked ~ .blocks .blocks__content {
+    top: -100vh;
+  }
+  &:nth-child(3):checked ~ .blocks .blocks__content {
+    top: -200vh;
+  }
+  &:nth-child(4):checked ~ .blocks .blocks__content {
+    top: -300vh;
+  }
+  &:nth-child(5):checked ~ .blocks .blocks__content {
+    top: -400vh;
+  }
+}
