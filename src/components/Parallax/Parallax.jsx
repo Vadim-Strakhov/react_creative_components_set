@@ -25,7 +25,7 @@ const Parallax = () => {
         />
         <img
           className={styles.img}
-          src="https://mykaleidoscope.ru/x/uploads/posts/2022-10/1666380388_15-mykaleidoscope-ru-p-krasivie-mosti-mira-oboi-15.jpg"
+          src="https://i.pinimg.com/736x/06/25/d9/0625d98fb5bad2c913328d80c5ee6732--bridge-wallpaper-wallpaper-in-hd.jpg"
           alt=""
         />
         <div className={styles.page}>
