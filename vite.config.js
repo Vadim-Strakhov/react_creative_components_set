@@ -10,5 +10,5 @@ export default defineConfig({
       plugins: [autoprefixer({})],
     },
   },
-  base: "react_creative_components_set",
+  base: "/react_creative_components_set",
 });
