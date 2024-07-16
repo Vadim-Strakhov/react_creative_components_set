@@ -3,6 +3,7 @@ import FaceCards from "../FaceCards/FaceCards";
 import HorizontalSlider from "../HorizontalSlider/HorizontalSlider";
 import IceCubes from "../IceCubes/IceCubes";
 import Parallax from "../Parallax/Parallax";
+import RoadMap from "../RoadMap/RoadMap";
 import VerticalSlider from "../VerticalSlider/VerticalSlider";
 
 export default function App() {
@@ -14,6 +15,7 @@ export default function App() {
       <AnimatedGradient />
       <VerticalSlider />
       <HorizontalSlider />
+      <RoadMap />
     </>
   );
 }
