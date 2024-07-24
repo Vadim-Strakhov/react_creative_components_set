@@ -1,10 +1,15 @@
-import { useState } from "react";
+import { CSSProperties, useState } from "react";
 import styles from "./VerticalSlider.module.scss";
+import cliff from "../../assets/5.VerticalSlider/cliff.jpg";
+import desert from "../../assets/5.VerticalSlider/desert.jpg";
+import leaves from "../../assets/5.VerticalSlider/leaves.jpg";
+import mountains from "../../assets/5.VerticalSlider/mountains.jpg";
+import tower from "../../assets/5.VerticalSlider/tower.jpg";
 
 const VerticalSlider = () => {
-  const [value, setValue] = useState(1);
+  const [value, setValue] = useState("1");
 
-  function changeHandler(event) {
+  function changeHandler(event: React.ChangeEvent<HTMLInputElement>) {
     setValue(event.target.value);
   }
 
@@ -59,46 +64,51 @@ const VerticalSlider = () => {
         <div className={styles.blocks__content}>
           <div
             className={styles.block}
-            style={{
-              "--img":
-                "url('https://i.ibb.co/fk4Bs44/photo-1554099617-31b803e2b002-ixlib-rb-4-0.jpg')",
-            }}
+            style={
+              {
+                "--img": `url(${mountains})`,
+              } as CSSProperties
+            }
           >
             Слайдер на чистом CSS
           </div>
           <div
             className={styles.block}
-            style={{
-              "--img":
-                "url('https://i.ibb.co/ZNxnnVw/photo-1664768297497-e60629c80ef4-ixlib-rb-4-0.jpg')",
-            }}
+            style={
+              {
+                "--img": `url(${cliff})`,
+              } as CSSProperties
+            }
           >
             Блок 2
           </div>
           <div
             className={styles.block}
-            style={{
-              "--img":
-                "url('https://i.ibb.co/wBRG8Rs/photo-1662522212392-309a624a2feb-ixlib-rb-4-0.jpg')",
-            }}
+            style={
+              {
+                "--img": `url(${tower})`,
+              } as CSSProperties
+            }
           >
             Блок 3
           </div>
           <div
             className={styles.block}
-            style={{
-              "--img":
-                "url('https://i.ibb.co/WyzgWyb/photo-1664021029310-bc881e4ebb22-ixlib-rb-4-0.jpg')",
-            }}
+            style={
+              {
+                "--img": `url(${desert})`,
+              } as CSSProperties
+            }
           >
             Блок 4
           </div>
           <div
             className={styles.block}
-            style={{
-              "--img":
-                "url('https://i.ibb.co/DgS6L1R/photo-1623586785022-97727556f0fe-ixlib-rb-4-0.jpg')",
-            }}
+            style={
+              {
+                "--img": `url(${leaves})`,
+              } as CSSProperties
+            }
           >
             Блок 5
           </div>

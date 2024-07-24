@@ -1,4 +1,6 @@
 import styles from "./Parallax.module.scss";
+import bridge1 from "../../assets/2.Parallax/bridge_1.jpg";
+import bridge2 from "../../assets/2.Parallax/bridge_2.jpg";
 
 const Parallax = () => {
   return (
@@ -18,16 +20,8 @@ const Parallax = () => {
         </div>
       </section>
       <section className={`${styles.block} ${styles.block3}`}>
-        <img
-          className={styles.img}
-          src="https://gas-kvas.com/uploads/posts/2023-02/1675438168_gas-kvas-com-p-fonovie-risunki-mosti-14.jpg"
-          alt=""
-        />
-        <img
-          className={styles.img}
-          src="https://i.pinimg.com/736x/06/25/d9/0625d98fb5bad2c913328d80c5ee6732--bridge-wallpaper-wallpaper-in-hd.jpg"
-          alt=""
-        />
+        <img className={styles.img} src={bridge1} alt="bridge_1" />
+        <img className={styles.img} src={bridge2} alt="bridge_2" />
         <div className={styles.page}>
           <div className={styles.page__title}>Card 2</div>
           <div className={styles.page__desc}>

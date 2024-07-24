@@ -17,6 +17,7 @@
     ">2% and not dead"
   ],
   "devDependencies": {
+    "@tsconfig/vite-react": "^3.0.2",
     "@types/react": "^18.2.66",
     "@types/react-dom": "^18.2.22",
     "@vitejs/plugin-react": "^4.2.1",
@@ -27,6 +28,8 @@
     "eslint-plugin-react-refresh": "^0.4.6",
     "normalize.css": "^8.0.1",
     "sass": "^1.75.0",
+    "typescript": "^5.5.4",
+    "typescript-plugin-css-modules": "^5.1.0",
     "vite": "^5.2.0"
   }
 }

@@ -1,10 +1,15 @@
-import { useState } from "react";
+import { useState, CSSProperties } from "react";
 import styles from "./HorizontalSlider.module.scss";
+import arrival from "../../assets/6.HorizontalSlider/arrival.jpg";
+import avengers from "../../assets/6.HorizontalSlider/avengers.jpg";
+import loop from "../../assets/6.HorizontalSlider/loop.jpg";
+import mk from "../../assets/6.HorizontalSlider/mk.jpg";
+import uncharted from "../../assets/6.HorizontalSlider/uncharted.jpg";
 
 const HorizontalSlider = () => {
-  const [value, setValue] = useState(1);
+  const [value, setValue] = useState("1");
 
-  function changeHandler(event) {
+  function changeHandler(event: React.ChangeEvent<HTMLInputElement>) {
     setValue(event.target.value);
   }
 
@@ -20,10 +25,11 @@ const HorizontalSlider = () => {
         className={styles.input}
       />
       <label
-        style={{
-          "--img":
-            "url('https://img.goodfon.ru/original/2880x1800/c/79/pribytie-arrival-fantastika-poster-kollazh-dzheremi-renner-j.jpg')",
-        }}
+        style={
+          {
+            "--img": `url(${arrival})`,
+          } as CSSProperties
+        }
         className={styles.slide}
         htmlFor="slide-1"
       >
@@ -48,10 +54,11 @@ const HorizontalSlider = () => {
         className={styles.input}
       />
       <label
-        style={{
-          "--img":
-            "url('https://img.goodfon.ru/original/2560x1440/1/d0/scarlett-johansson-action-fantasy-superheroes-hulk-space-d-2.jpg')",
-        }}
+        style={
+          {
+            "--img": `url(${avengers})`,
+          } as CSSProperties
+        }
         className={styles.slide}
         htmlFor="slide-2"
       >
@@ -76,10 +83,11 @@ const HorizontalSlider = () => {
         className={styles.input}
       />
       <label
-        style={{
-          "--img":
-            "url('https://i.artfile.ru/3840x2160_1566401_[www.ArtFile.ru].jpg')",
-        }}
+        style={
+          {
+            "--img": `url(${mk})`,
+          } as CSSProperties
+        }
         className={styles.slide}
         htmlFor="slide-3"
       >
@@ -104,10 +112,11 @@ const HorizontalSlider = () => {
         className={styles.input}
       />
       <label
-        style={{
-          "--img":
-            "url('https://gamemag.ru/images/imagemanager/cache/14/12aa/1412aa_uhdpaper.com-download-pc-2k-wallpaper-59-0-f.jpg')",
-        }}
+        style={
+          {
+            "--img": `url(${uncharted})`,
+          } as CSSProperties
+        }
         className={styles.slide}
         htmlFor="slide-4"
       >
@@ -132,10 +141,11 @@ const HorizontalSlider = () => {
         className={styles.input}
       />
       <label
-        style={{
-          "--img":
-            "url('https://img.goodfon.ru/original/4000x2250/2/c3/petlia-vremeni-oruzhie-spina-k-spine-okhotnik.jpg')",
-        }}
+        style={
+          {
+            "--img": `url(${loop})`,
+          } as CSSProperties
+        }
         className={styles.slide}
         htmlFor="slide-5"
       >

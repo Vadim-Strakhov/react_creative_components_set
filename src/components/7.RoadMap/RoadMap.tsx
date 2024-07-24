@@ -4,7 +4,7 @@ import styles from "./RoadMap.module.scss";
 const RoadMap = () => {
   const [selectedYear, setSelectedYear] = useState(2005);
 
-  const handleRadioChange = (year) => {
+  const handleRadioChange = (year: number) => {
     setSelectedYear(year);
   };
 
