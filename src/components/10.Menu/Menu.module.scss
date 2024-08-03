@@ -1,0 +1,126 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
+
+:root {
+  --gradient: linear-gradient(to right, #53acff, #7869fb);
+  --menu-gradient: radial-gradient(#2998ff, #5643fa);
+  --menuBtnSize: 110px;
+}
+
+.wrapper {
+  font-family: "Nunito", sans-serif;
+  height: 100vh;
+  overflow: hidden;
+  background: var(--gradient);
+  position: relative;
+}
+
+.ripple {
+  transition: 0.4s ease-in;
+  background: var(--menu-gradient);
+}
+
+.ripple,
+.btn {
+  cursor: pointer;
+  position: absolute;
+  top: 50px;
+  right: 50px;
+  width: var(--menuBtnSize);
+  height: var(--menuBtnSize);
+  border-radius: var(--menuBtnSize);
+  background-color: #fff;
+}
+.btn {
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.3);
+  z-index: 1;
+  & span {
+    height: 2px;
+    background-color: #000;
+    width: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: 0.2s;
+    &::before,
+    &::after {
+      --offset: 14px;
+      transition: 0.2s;
+      content: "";
+      position: absolute;
+      top: calc(var(--offset) * -1);
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background-color: #000;
+    }
+    &::after {
+      top: var(--offset);
+    }
+  }
+  &:hover {
+    & span::before,
+    & span::after {
+      --offset: 17px;
+    }
+  }
+}
+.menu {
+  position: absolute;
+  top: 50%;
+  left: -50%;
+  transform: translate(-50%, -50%);
+  display: grid;
+  align-content: center;
+  justify-content: center;
+  justify-items: center;
+  grid-gap: 10px;
+  transition: 0.3s cubic-bezier(0.25, -0.5, 0.8, 0.02);
+}
+.link {
+  font-size: 40px;
+  text-decoration: none;
+  color: white;
+  background: linear-gradient(
+    125deg,
+    transparent 0%,
+    transparent 50%,
+    white 50%,
+    white 100%
+  );
+  background-size: 300%;
+  background-position: 0%;
+  padding: 10px 30px;
+  transition: 0.4s;
+  &:hover {
+    background-position: 100%;
+    color: #7869fb;
+    transform: translateX(5%);
+  }
+}
+
+//! Checked
+
+.input {
+  appearance: none;
+  &:checked + .btn span {
+    background-color: rgba(0, 0, 0, 0);
+    &::before {
+      top: 0;
+      transform: rotate(-135deg);
+    }
+    &::after {
+      top: 0;
+      transform: rotate(135deg);
+    }
+  }
+}
+
+.input:checked ~ .ripple {
+  transform: scale(80);
+}
+
+.input:checked ~ .menu {
+  left: 50%;
+  transition: 0.3s cubic-bezier(0.24, 1.09, 0.7, 1.27);
+}

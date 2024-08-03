@@ -13,6 +13,7 @@ const HorizontalSlider = lazy(
 );
 const RoadMap = lazy(() => import("../7.RoadMap/RoadMap"));
 const Gallery = lazy(() => import("../9.Gallery/Gallery"));
+const Menu = lazy(() => import("../10.Menu/Menu"));
 
 export default function App() {
   return (
@@ -25,6 +26,7 @@ export default function App() {
       <HorizontalSlider />
       <RoadMap />
       <Gallery />
+      <Menu />
     </Suspense>
   );
 }
