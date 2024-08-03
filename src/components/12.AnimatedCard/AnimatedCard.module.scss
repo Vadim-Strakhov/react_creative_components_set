@@ -1,0 +1,97 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
+
+:root {
+  --bg: #212534;
+  --gradient: linear-gradient(0deg, #5ddcff, #3c67e3 43%, #4e00c2);
+  --cardBg: #191c29;
+}
+
+.wrapper {
+  height: 100vh;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--bg);
+  font-family: "Nunito", sans-serif;
+}
+.card {
+  width: 400px;
+  height: 600px;
+  position: relative;
+  &:hover {
+    & .glow,
+    & .content::before {
+      opacity: 0;
+    }
+    & .title {
+      opacity: 1;
+    }
+  }
+}
+
+.glow {
+  position: absolute;
+  top: 70%;
+  left: 60%;
+  width: 60%;
+  height: 60%;
+  background: var(--gradient);
+  filter: blur(100px);
+  animation: rotate 3s linear infinite;
+  transition: 1s;
+}
+.content {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+  border-radius: 8px;
+  z-index: 1;
+  color: white;
+  font-size: 22px;
+  padding: 10px;
+  text-align: center;
+  display: grid;
+  align-items: center;
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+  }
+  &::before {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 180%;
+    height: 120%;
+    background: var(--gradient);
+    border-radius: 8px;
+    animation: rotate 3s linear infinite;
+    transition: 1s;
+  }
+  &::after {
+    top: 5px;
+    right: 5px;
+    bottom: 5px;
+    left: 5px;
+    background-color: var(--cardBg);
+    border-radius: 5px;
+  }
+}
+
+.title {
+  opacity: 0;
+  transition: 1s;
+}
+
+@keyframes rotate {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
