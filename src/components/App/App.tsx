@@ -16,6 +16,9 @@ const Gallery = lazy(() => import("../9.Gallery/Gallery"));
 const Menu = lazy(() => import("../10.Menu/Menu"));
 const ProductCard = lazy(() => import("../11.ProductCard/ProductCard"));
 const AnimatedCard = lazy(() => import("../12.AnimatedCard/AnimatedCard"));
+const AnimatedInterface = lazy(
+  () => import("../13.AnimatedInterface/AnimatedInterface")
+);
 
 export default function App() {
   return (
@@ -31,6 +34,7 @@ export default function App() {
       <Menu />
       <ProductCard />
       <AnimatedCard />
+      <AnimatedInterface />
     </Suspense>
   );
 }

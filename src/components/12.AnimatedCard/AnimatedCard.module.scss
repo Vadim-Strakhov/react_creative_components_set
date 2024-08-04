@@ -1,9 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
 
 :root {
-  --bg: #212534;
-  --gradient: linear-gradient(0deg, #5ddcff, #3c67e3 43%, #4e00c2);
-  --cardBg: #191c29;
+  --bgAnimated: #212534;
+  --animatedGradient: linear-gradient(0deg, #5ddcff, #3c67e3 43%, #4e00c2);
+  --animatedCardBg: #191c29;
 }
 
 .wrapper {
@@ -11,7 +11,7 @@
   display: grid;
   align-items: center;
   justify-content: center;
-  background-color: var(--bg);
+  background-color: var(--bgAnimated);
   font-family: "Nunito", sans-serif;
 }
 .card {
@@ -35,7 +35,7 @@
   left: 60%;
   width: 60%;
   height: 60%;
-  background: var(--gradient);
+  background: var(--animatedGradient);
   filter: blur(100px);
   animation: rotate 3s linear infinite;
   transition: 1s;
@@ -67,7 +67,7 @@
     transform: translate(-50%, -50%);
     width: 180%;
     height: 120%;
-    background: var(--gradient);
+    background: var(--animatedGradient);
     border-radius: 8px;
     animation: rotate 3s linear infinite;
     transition: 1s;
@@ -77,7 +77,7 @@
     right: 5px;
     bottom: 5px;
     left: 5px;
-    background-color: var(--cardBg);
+    background-color: var(--animatedCardBg);
     border-radius: 5px;
   }
 }

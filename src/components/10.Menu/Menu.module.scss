@@ -1,8 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
 
 :root {
-  --gradient: linear-gradient(to right, #53acff, #7869fb);
-  --menu-gradient: radial-gradient(#2998ff, #5643fa);
+  --menuMainGradient: linear-gradient(to right, #53acff, #7869fb);
+  --menuGradient: radial-gradient(#2998ff, #5643fa);
   --menuBtnSize: 110px;
 }
 
@@ -10,13 +10,13 @@
   font-family: "Nunito", sans-serif;
   height: 100vh;
   overflow: hidden;
-  background: var(--gradient);
+  background: var(--menuMainGradient);
   position: relative;
 }
 
 .ripple {
   transition: 0.4s ease-in;
-  background: var(--menu-gradient);
+  background: var(--menuGradient);
 }
 
 .ripple,

@@ -1,9 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
 
 :root {
-  --bg: #212121;
-  --cardBg: #191919;
-  --accent: #ffce00;
+  --mainBgProductCard: #212121;
+  --productCardBg: #191919;
+  --productCardAccent: #ffce00;
 }
 
 .wrapper {
@@ -13,7 +13,7 @@
   display: grid;
   align-items: center;
   justify-items: center;
-  background: var(--bg);
+  background: var(--mainBgProductCard);
 }
 .card {
   width: 320px;
@@ -21,7 +21,7 @@
   border-radius: 20px;
   padding-top: 20px;
   position: relative;
-  background-color: var(--cardBg);
+  background-color: var(--productCardBg);
   overflow: hidden;
   text-align: center;
   &::after {
@@ -40,7 +40,7 @@
     left: 0;
     right: 0;
     height: 100%;
-    background-color: var(--accent);
+    background-color: var(--productCardAccent);
     transform: skewY(345deg);
     transition: 0.4s;
   }
@@ -82,7 +82,7 @@
 .price {
   margin-top: 8px;
   font-size: 22px;
-  color: var(--accent);
+  color: var(--productCardAccent);
 }
 .btn {
   position: relative;
@@ -94,8 +94,8 @@
   font-size: 16px;
   text-transform: uppercase;
   border-radius: 50px;
-  background-color: var(--accent);
-  color: var(--cardBg);
+  background-color: var(--productCardAccent);
+  color: var(--productCardBg);
   transition: 0.4s;
   top: 100px;
 }
