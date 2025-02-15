@@ -25,6 +25,7 @@ const CreditCards = lazy(() => import("../16.CreditCards/CreditCards"));
 const Double3dCard = lazy(() => import("../17.Double3dCard/Double3dCard"));
 const LavaMenu = lazy(() => import("../18.LavaMenu/LavaMenu"));
 const GlassTable = lazy(() => import("../19.GlassTable/GlassTable"));
+const GridVideo = lazy(() => import("../20.GridVideo/GridVideo"));
 
 export default function App() {
   return (
@@ -47,6 +48,7 @@ export default function App() {
       <Double3dCard />
       <LavaMenu />
       <GlassTable />
+      <GridVideo />
     </Suspense>
   );
 }

@@ -1,0 +1,99 @@
+.wrapper {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  filter: saturate(180%);
+}
+
+.grid {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  grid-auto-rows: 250px;
+  grid-gap: 16px;
+  grid-auto-flow: dense;
+  overflow: hidden;
+
+  > div {
+    cursor: pointer;
+    height: 100%;
+    position: relative;
+    border: 1px solid #000;
+
+    &::before,
+    &::after {
+      --offset: 0;
+      content: "";
+      position: absolute;
+      top: var(--offset);
+      right: var(--offset);
+      bottom: var(--offset);
+      left: var(--offset);
+      background-color: #000;
+      mix-blend-mode: lighten;
+      transition: 0.5s;
+    }
+
+    &::after {
+      --offset: -18px;
+      border: calc(var(--offset) * -1) solid #fff;
+      mix-blend-mode: screen;
+    }
+
+    &:nth-child(2n) {
+      grid-row: span 2;
+    }
+
+    &:nth-child(5n) {
+      grid-column: span 2;
+      grid-row: span 2;
+    }
+
+    > div {
+      position: relative;
+      z-index: 1;
+      opacity: 0;
+      width: 100%;
+      height: 100%;
+      transition: 0.5s;
+      display: grid;
+      align-items: center;
+      justify-items: center;
+      font-size: 32px;
+      font-weight: bold;
+      color: white;
+      text-shadow: 0 4px 8px black;
+    }
+  }
+
+  &:hover {
+    > div {
+      &::before {
+        mix-blend-mode: color;
+      }
+
+      &:hover {
+        &::before {
+          mix-blend-mode: lighten;
+        }
+
+        &::after {
+          mix-blend-mode: screen;
+        }
+
+        > div {
+          box-shadow: inset 0 0 30px #000;
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
