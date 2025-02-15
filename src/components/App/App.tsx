@@ -29,6 +29,7 @@ const GridVideo = lazy(() => import("../20.GridVideo/GridVideo"));
 const InteractiveForm = lazy(
   () => import("../21.InteractiveForm/InteractiveForm"),
 );
+const ProgressClock = lazy(() => import("../22.ProgressClock/ProgressClock"));
 
 export default function App() {
   return (
@@ -53,6 +54,7 @@ export default function App() {
       <GlassTable />
       <GridVideo />
       <InteractiveForm />
+      <ProgressClock />
     </Suspense>
   );
 }
