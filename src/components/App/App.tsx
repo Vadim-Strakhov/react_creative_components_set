@@ -5,11 +5,11 @@ const FaceCards = lazy(() => import("../1.FaceCards/FaceCards"));
 const Parallax = lazy(() => import("../2.Parallax/Parallax"));
 const IceCubes = lazy(() => import("../3.IceCubes/IceCubes"));
 const AnimatedGradient = lazy(
-  () => import("../4.AnimatedGradient/AnimatedGradient")
+  () => import("../4.AnimatedGradient/AnimatedGradient"),
 );
 const VerticalSlider = lazy(() => import("../5.VerticalSlider/VerticalSlider"));
 const HorizontalSlider = lazy(
-  () => import("../6.HorizontalSlider/HorizontalSlider")
+  () => import("../6.HorizontalSlider/HorizontalSlider"),
 );
 const RoadMap = lazy(() => import("../7.RoadMap/RoadMap"));
 const Gallery = lazy(() => import("../9.Gallery/Gallery"));
@@ -17,9 +17,10 @@ const Menu = lazy(() => import("../10.Menu/Menu"));
 const ProductCard = lazy(() => import("../11.ProductCard/ProductCard"));
 const AnimatedCard = lazy(() => import("../12.AnimatedCard/AnimatedCard"));
 const AnimatedInterface = lazy(
-  () => import("../13.AnimatedInterface/AnimatedInterface")
+  () => import("../13.AnimatedInterface/AnimatedInterface"),
 );
 const AnimatedMenu = lazy(() => import("../14.AnimatedMenu/AnimatedMenu"));
+const Cards3D = lazy(() => import("../15.Cards3D/Cards3D"));
 
 export default function App() {
   return (
@@ -37,6 +38,7 @@ export default function App() {
       <AnimatedCard />
       <AnimatedInterface />
       <AnimatedMenu />
+      <Cards3D />
     </Suspense>
   );
 }

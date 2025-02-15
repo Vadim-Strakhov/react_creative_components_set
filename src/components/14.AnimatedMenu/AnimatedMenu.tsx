@@ -1,5 +1,6 @@
 import styles from "./AnimatedMenu.module.scss";
 
+
 const AnimatedMenu = () => {
   return (
     <div className={styles.wrapper}>

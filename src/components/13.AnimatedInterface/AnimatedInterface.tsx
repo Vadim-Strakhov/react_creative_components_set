@@ -1,5 +1,4 @@
 import styles from "./AnimatedInterface.module.scss";
-import city from "../../assets/13.AnimatedInterface/city.jpg";
 import man from "../../assets/13.AnimatedInterface/man.jpg";
 import man2 from "../../assets/13.AnimatedInterface/man2.jpg";
 import man3 from "../../assets/13.AnimatedInterface/man3.jpg";
