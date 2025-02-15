@@ -1,0 +1,117 @@
+:root {
+  --margin: 90px;
+  --cardHeight: 240px;
+  --cardWidth: 400px;
+}
+
+.wrapper {
+  height: 100vh;
+  overflow: hidden;
+  background: #0f2027;
+  background: -webkit-linear-gradient(to right, #2c5364, #203a43, #0f2027);
+  background: linear-gradient(to right, #2c5364, #203a43, #0f2027);
+
+  font-family: "Open Sans", sans-serif;
+  position: relative;
+}
+
+.box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  height: 600px;
+}
+
+.card {
+  width: var(--cardWidth);
+  height: var(--cardHeight);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  padding: 32px;
+  color: white;
+  position: absolute;
+  left: 50%;
+  margin-left: -32%;
+  top: calc(var(--margin) / 3 * var(--i));
+  transform: scale(calc(0.95 + 0.07 * var(--i)));
+  transition: 0.5s;
+  border: 0.5px solid #969696;
+  overflow: hidden;
+  text-shadow: 0 1px 2px black;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+  }
+
+  &::before {
+    filter: saturate(130%);
+    background: var(--img) center/cover;
+  }
+
+  &::after {
+    background: #000;
+    opacity: 0.1;
+  }
+
+  &:not(:first-child) {
+    box-shadow: 0 -20px 10px -20px black;
+  }
+}
+
+.box:hover .card {
+  top: calc(var(--margin) * var(--i));
+  transform: perspective(600px) translateY(-60px) rotateX(-60deg);
+}
+
+.box .card:hover {
+  top: calc(var(--margin) + var(--margin) * var(--i));
+  transform: perspective(600px) translateY(-60px);
+}
+
+.box .card:hover ~ .card {
+  top: calc(var(--cardHeight) / 1.1 + var(--margin) * var(--i));
+}
+
+.box:hover .card:not(:hover) {
+  opacity: 0.75;
+}
+
+.card__title {
+  font-size: 36px;
+  font-weight: bold;
+  line-height: 1em;
+}
+
+.card__type {
+  font-size: 18px;
+}
+
+.card__numb {
+  font-size: 26px;
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  letter-spacing: 3px;
+  margin: 20px 10px;
+  margin-top: auto;
+
+  span {
+    font-size: 0.8em;
+    position: relative;
+    top: 4px;
+  }
+
+  strong {
+    font-weight: normal;
+  }
+}
