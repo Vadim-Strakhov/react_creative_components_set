@@ -1,0 +1,121 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600;700;800;900&display=swap");
+
+.wrapper {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  font-family: "Nunito", sans-serif;
+  z-index: 1;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+  }
+
+  &::before {
+    background: url("../../assets/19.GlassTable/majesty.png") center / cover;
+    backdrop-filter: brightness(0%);
+  }
+
+  &::after {
+    background: linear-gradient(45deg, #00c6ff, #0072ff);
+    opacity: 0.05;
+  }
+}
+
+.container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.table {
+  cursor: default;
+  position: relative;
+  width: 800px;
+  overflow: hidden;
+  color: white;
+  border-collapse: collapse;
+  border: 15px solid #000;
+  border-radius: 10px;
+  backdrop-filter: brightness(130%) blur(10px);
+  text-shadow: 1px 1px 2px #000;
+  box-shadow:
+    0 0 1px white,
+    0 0 50px 10px black;
+
+  &::after {
+    pointer-events: none;
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border: 8px solid #fff9;
+  }
+}
+
+.th,
+.td {
+  padding: 15px;
+}
+
+.th {
+  text-align: left;
+  border: 1px solid #000;
+}
+
+.thead {
+  background: linear-gradient(45deg, #00c6ff22, #539fff44);
+
+  .th {
+    background-color: #000b;
+  }
+}
+
+.tbody {
+  background: linear-gradient(45deg, #00c6ff22, #539fff44);
+
+  .tr {
+    transition: 0.5s;
+
+    &:nth-child(2n) {
+      background-color: rgba(255, 255, 255, 0.05);
+    }
+
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.3);
+    }
+  }
+
+  .td {
+    border: 1px solid #0005;
+    font-weight: 300;
+    position: relative;
+
+    &::before {
+      transition: 0.5s;
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: -9999px;
+      bottom: -9999px;
+      background-color: rgba(0, 0, 0, 0.5);
+      opacity: 0;
+      z-index: -1;
+    }
+
+    &:hover::before {
+      opacity: 1;
+    }
+  }
+}
