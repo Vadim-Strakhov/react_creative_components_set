@@ -1,0 +1,313 @@
+:root {
+  --ocean-breeze: #64bae6;
+  --midnight-void: black;
+  --pure-snow: white;
+  --card-width: 340px;
+  --card-height: 510px;
+  --azure-wave: #38a5dd;
+  --emerald-leaf: #278b37;
+  --gradientBlue: linear-gradient(to bottom left, #22a0e2, #d9f1fd);
+  --gradientGreen: linear-gradient(to bottom left, #297437, #befa8c);
+}
+
+.container {
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  font-family: "Nunito", sans-serif;
+  display: grid;
+  align-content: start;
+  justify-items: center;
+  padding-top: 70px;
+  background: var(--ocean-breeze);
+}
+
+.switch {
+  appearance: none;
+}
+
+.switchLabel {
+  cursor: pointer;
+  border-radius: 5px;
+  text-transform: uppercase;
+  display: grid;
+  grid-template-columns: repeat(2, 100px);
+  align-items: center;
+  height: 56px;
+  text-align: center;
+  font-weight: bold;
+  position: relative;
+  border: 3px solid var(--pure-snow);
+  background: var(--pure-snow);
+  outline: 0.5px solid rgba(0, 0, 0, 0.5);
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100px;
+    height: 100%;
+    border-radius: 5px;
+    transition: 0.4s;
+    background: var(--azure-wave);
+  }
+}
+
+.switch:checked + .switchLabel::before {
+  background: var(--emerald-leaf);
+  left: 50%;
+}
+
+.switchLabel span {
+  transition: 0.4s;
+  position: relative;
+  color: var(--pure-snow);
+
+  &:nth-child(2) {
+    color: var(--midnight-void);
+  }
+}
+
+.switch:checked + .switchLabel span {
+  color: var(--midnight-void);
+
+  &:nth-child(2) {
+    color: var(--pure-snow);
+  }
+}
+
+.cardWrap {
+  perspective: 1000px;
+  transform-style: preserve-3d;
+  margin-top: 70px;
+}
+
+.card {
+  transform-style: preserve-3d;
+  width: var(--card-width);
+  height: var(--card-height);
+  text-align: center;
+  position: relative;
+  transition: 0.8s ease-in-out 0.4s;
+}
+
+.switch:checked ~ .cardWrap .card {
+  transform: rotateY(-180deg);
+}
+
+.cardFront,
+.cardBack {
+  transform-style: preserve-3d;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 170px 20px 30px;
+  border-radius: 8px;
+  display: grid;
+  background: var(--pure-snow) var(--img) top center/100% no-repeat;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+  border: 0.5px solid rgba(0, 0, 0, 0.5);
+}
+
+.cardBack {
+  transform: rotateY(180deg) translateZ(50px) scale(0.95);
+}
+
+.cardContent {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  backface-visibility: hidden;
+  transform: translateZ(50px) scale(0.95);
+}
+
+.cardTitle {
+  font-size: 24px;
+  font-weight: bold;
+  letter-spacing: 3px;
+  margin-bottom: 30px;
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -60%);
+    z-index: -1;
+    width: 80px;
+    height: 80px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    animation: border 5s linear infinite;
+    background: var(--gradientBlue);
+  }
+}
+
+.cardBack .cardTitle::before {
+  background: var(--gradientGreen);
+}
+
+.cardPrice {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  justify-content: center;
+  font-size: 36px;
+  gap: 2px;
+
+  small {
+    font-size: 20px;
+    padding-top: 5px;
+  }
+
+  div {
+    width: 100%;
+    font-size: 16px;
+  }
+}
+
+.cardLocation {
+  margin-top: auto;
+  margin-bottom: 20px;
+}
+
+.cardBtn {
+  cursor: pointer;
+  margin: auto;
+  color: var(--pure-snow);
+  border-radius: 4px;
+  padding: 14px 20px;
+  background: var(--azure-wave);
+  border: 0.5px solid rgba(0, 0, 0, 0.5);
+}
+
+.cardBack .cardBtn {
+  background: var(--emerald-leaf);
+}
+
+.card {
+  img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+  .cardKayak {
+    width: 150%;
+    transform: translate(-80%, -130%) scale(1);
+    transition:
+      0.4s 1.2s,
+      opacity 0.2s 1.2s;
+  }
+  .cardStone {
+    width: 35%;
+    transform: translate(90%, 120%) scale(1);
+    transition:
+      0.4s 1.4s,
+      opacity 0.2s 1.4s;
+  }
+  .cardWater {
+    width: 80%;
+    transform: translate(-20%, -160%) scale(1);
+    transition:
+      0.4s 1.3s,
+      opacity 0.2s 1.3s;
+  }
+}
+
+.switch:checked ~ .cardWrap .cardKayak {
+  transition:
+    0.4s,
+    opacity 0.2s 0.2s;
+  transform: translate(-100%, -110%) scale(1);
+  opacity: 0;
+}
+
+.switch:checked ~ .cardWrap .cardWater {
+  transition:
+    0.4s 0.1s,
+    opacity 0.2s 0.3s;
+  transform: translate(-40%, -150%) scale(0.5);
+  opacity: 0;
+}
+
+.switch:checked ~ .cardWrap .cardStone {
+  transition:
+    0.4s 0.2s,
+    opacity 0.2s 0.4s;
+  transform: translate(90%, 120%) scale(0.5);
+  opacity: 0;
+}
+
+.cardCamp {
+  width: 95%;
+  opacity: 0;
+  transition:
+    0.4s,
+    opacity 0.2s 0.2s;
+  transform: translate(-80%, -135%) scale(0.5);
+}
+
+.switch:checked ~ .cardWrap .cardCamp {
+  transition:
+    0.4s 1.2s,
+    opacity 0.2s 1.2s;
+  transform: translate(-80%, -135%) scale(1);
+  opacity: 1;
+}
+
+.cardTree {
+  width: 90%;
+  opacity: 0;
+  transition:
+    0.4s 0.1s,
+    opacity 0.2s 0.2s;
+  transform: translate(-10%, -118%) scale(0.5) rotate(0deg);
+}
+
+.switch:checked ~ .cardWrap .cardTree {
+  transition:
+    0.4s 1.3s,
+    opacity 0.2s 1.3s;
+  transform: translate(-10%, -118%) scale(1) rotate(15deg);
+  opacity: 1;
+}
+
+.cardStone2 {
+  width: 40%;
+  opacity: 0;
+  transition:
+    0.4s 0.2s,
+    opacity 0.2s 0.2s;
+  transform: translate(70%, 80%) scale(0.5);
+}
+
+.switch:checked ~ .cardWrap .cardStone2 {
+  transition:
+    0.4s 1.4s,
+    opacity 0.2s 1.4s;
+  transform: translate(70%, 80%) scale(1);
+  opacity: 1;
+}
+
+@keyframes border {
+  0% {
+    border-radius: 84% 66% 100% 66%/100% 72% 94% 73%;
+  }
+  25% {
+    border-radius: 100% 56% 100% 51%/77% 64% 100% 100%;
+  }
+  50% {
+    border-radius: 84% 62% 51% 98%/61% 100% 59% 100%;
+  }
+  75% {
+    border-radius: 96% 75% 100% 35%/100% 85% 91% 63%;
+  }
+  100% {
+    border-radius: 84% 66% 100% 66%/100% 72% 94% 73%;
+  }
+}

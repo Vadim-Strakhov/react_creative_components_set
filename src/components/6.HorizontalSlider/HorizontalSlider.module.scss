@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
 
 :root {
-  --transition: all 0.3s ease-in-out;
+  --transitionSlider: all 0.3s ease-in-out;
 }
 
 .slider {
@@ -14,7 +14,7 @@
 
 .slide {
   flex-grow: 1;
-  transition: var(--transition);
+  transition: var(--transitionSlider);
   position: relative;
   overflow: hidden;
   display: grid;
@@ -63,7 +63,7 @@
   left: 60px;
   bottom: -50vh;
   opacity: 0;
-  transition: var(--transition);
+  transition: var(--transitionSlider);
 }
 .title {
   font-size: 32px;

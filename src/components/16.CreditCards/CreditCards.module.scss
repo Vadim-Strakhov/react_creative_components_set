@@ -5,14 +5,13 @@
 }
 
 .wrapper {
+  position: relative;
   height: 100vh;
   overflow: hidden;
   background: #0f2027;
   background: -webkit-linear-gradient(to right, #2c5364, #203a43, #0f2027);
   background: linear-gradient(to right, #2c5364, #203a43, #0f2027);
-
   font-family: "Open Sans", sans-serif;
-  position: relative;
 }
 
 .box {
