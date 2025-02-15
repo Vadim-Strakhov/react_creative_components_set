@@ -37,11 +37,11 @@
   }
 }
 
-input {
+.lavaInput {
   display: none;
 }
 
-label {
+.lavaLabel {
   text-decoration: none;
   font-family: sans-serif;
   text-transform: uppercase;
@@ -65,7 +65,7 @@ label {
   }
 }
 
-input:checked + label {
+.lavaLabel.checked {
   color: #fff;
   height: 150px;
 }
@@ -130,48 +130,48 @@ input:checked ~ .selector:after {
   box-shadow: 0 -17px 35px 8px var(--hole);
 }
 
-label i {
+.lavaLabel i {
   font-size: 3.2em;
 }
 
-label span {
+.lavaLabel span {
   text-shadow: 0 2px 24px #000;
 }
 
-input:checked + label > i {
+.lavaLabel.checked > i {
   color: white;
   text-shadow: 0px 0px 2px var(--sel);
 }
 
-input:checked + label {
+.lavaLabel.checked {
   color: var(--sel);
   text-shadow:
     0 0 5px black,
     0 0 10px black;
 }
 
-input:checked + label[for="m-home"] {
+label.checked[for="m-home"] {
   --sel: #39a1f4;
 }
 
-input:checked + label[for="m-search"] {
+label.checked[for="m-search"] {
   --sel: #f48d4e;
 }
 
-input:checked + label[for="m-notification"] {
+label.checked[for="m-notification"] {
   --sel: #1cab7b;
 }
 
-input:checked + label[for="m-favorites"] {
+label.checked[for="m-favorites"] {
   --sel: #ff6275;
 }
 
-input:checked + label[for="m-profile"] {
+label.checked[for="m-profile"] {
   --sel: #9d74ff;
 }
 
 @media only screen and (orientation: portrait) {
-  label {
+  .lavaLabel {
     text-shadow: none !important;
   }
 }
