@@ -19,6 +19,7 @@ const AnimatedCard = lazy(() => import("../12.AnimatedCard/AnimatedCard"));
 const AnimatedInterface = lazy(
   () => import("../13.AnimatedInterface/AnimatedInterface")
 );
+const AnimatedMenu = lazy(() => import("../14.AnimatedMenu/AnimatedMenu"));
 
 export default function App() {
   return (
@@ -35,6 +36,7 @@ export default function App() {
       <ProductCard />
       <AnimatedCard />
       <AnimatedInterface />
+      <AnimatedMenu />
     </Suspense>
   );
 }
