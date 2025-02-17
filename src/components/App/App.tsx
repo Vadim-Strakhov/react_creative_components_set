@@ -30,6 +30,7 @@ const InteractiveForm = lazy(
   () => import("../21.InteractiveForm/InteractiveForm"),
 );
 const ProgressClock = lazy(() => import("../22.ProgressClock/ProgressClock"));
+const Switches = lazy(() => import("../8.Switches/Switches"));
 
 export default function App() {
   return (
@@ -41,6 +42,7 @@ export default function App() {
       <VerticalSlider />
       <HorizontalSlider />
       <RoadMap />
+      <Switches />
       <Gallery />
       <Menu />
       <ProductCard />
