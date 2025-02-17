@@ -55,8 +55,8 @@ export default function App() {
       <LavaMenu />
       <GlassTable />
       <GridVideo />
-      <InteractiveForm />
       <ProgressClock />
+      <InteractiveForm />
     </Suspense>
   );
 }
